@@ -1,0 +1,19 @@
+# Key-value pairs
+
+Name: Tanvir
+Age: 23
+Job: DevOps Engineer
+
+# Lists
+
+fruits:
+  - Apple
+  - Banana
+  - Orange
+
+# Nested structures
+
+address:
+  street: 123 Main St
+  city: London
+  borough: Hackney
