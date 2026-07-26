@@ -11,41 +11,65 @@
 #       - name: We are testing this workflow
 #         run: echo "Hello, World!"
 
-name: Demo Combined
+
+##########################################################################################
+######## Chapter 4: Python Unit Testing Workflow #########################################
+##########################################################################################
+
+# name: Demo Combined
+# on: [push]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     strategy:
+#       matrix:
+#         python-version: ['3.8','3.9','3.10']
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: ${{ matrix.python-version }}
+
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install -r chapter4/requirements.txt
+#       - name: Run tests
+#         run: |
+#           cd chapter4
+#           python -m pip install --upgrade pip
+#           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+#       - name: Run tests
+#         run: |
+#           cd chapter4
+#           python -m unittest discover
+
+#       - name: Notify of success
+#         run: echo "Test passed successfully on Pyhton ${{ matrix.python-version }}"
+#         if: success()
+
+
+name: Custom Action Workflow
+
 on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        python-version: ['3.8','3.9','3.10']
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+        -name: Run Custom Action (Hello World)
+        uses: tanvir039/custom-action-demo@main
         with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r chapter4/requirements.txt
-      - name: Run tests
-        run: |
-          cd chapter4
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Run tests
-        run: |
-          cd chapter4
-          python -m unittest discover
-
-      - name: Notify of success
-        run: echo "Test passed successfully on Pyhton ${{ matrix.python-version }}"
-        if: success()
+          who-to-greet: "Tanvir"
