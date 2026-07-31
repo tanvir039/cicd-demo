@@ -60,8 +60,8 @@ name: Custom Action Workflow
 
 on:
   push:
-    paths:
-      - 'cicd-demo/**'
+    # paths:
+    #   - 'cicd-demo/**'
 
 jobs:
   build:
