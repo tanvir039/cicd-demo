@@ -17,4 +17,4 @@ jobs:
       - name: Run Custom Action (Hello World)
         uses: tanvir039/custom-action-demo@main
         with:
-          who-to-greet: "Tanvir"
+          who-to-greet: "Tanvir A"
