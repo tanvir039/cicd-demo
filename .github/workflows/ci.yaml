@@ -61,23 +61,23 @@ jobs:
         if: success()
 
 
-name: Custom Action Workflow
+# name: Custom Action Workflow
 
-on:
-  push:
-    paths:
-      - 'custom-action-demo/**'
+# on:
+#   push:
+#     paths:
+#       - 'custom-action-demo/**'
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Run Custom Action (Hello World)
-        uses: tanvir039/custom-action-demo@main
-        with:
-          who-to-greet: "Tanvir"
+#       - name: Run Custom Action (Hello World)
+#         uses: tanvir039/custom-action-demo@main
+#         with:
+#           who-to-greet: "Tanvir"
