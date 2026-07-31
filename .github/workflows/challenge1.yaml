@@ -1,0 +1,26 @@
+name: Build and Push image to DockerHub
+
+on:
+  push:
+    paths:
+      - 'cicd-challenge-1/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./cicd-challenge-1
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-challenge-1:latest
