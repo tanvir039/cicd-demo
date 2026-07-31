@@ -22,7 +22,7 @@ name: Demo Combined
 on:
   push:
     paths:
-      - 'cicd-demo/**'
+      - 'chapter4/**'
 
 jobs:
   build:
