@@ -1,11 +1,11 @@
 variable "ami" {
-description = "The AMI to use for the instance"
+  description = "The AMI to use for the instance"
   type        = string
-#   default     = "ami-test"
+  #   default     = "ami-test"
 }
 
 variable "instance_type" {
   description = "The type of instance to create"
   type        = string
-#   default     = "t2.micro"
+  #   default     = "t2.micro"
 }
