@@ -11,8 +11,8 @@ terraform {
 
 provider "aws" {
   region                      = "us-east-1"
-  access_key                  = "test"
-  secret_key                  = "test"
+  access_key                  = "test1"
+  secret_key                  = "test1"
   skip_credentials_validation = true
   skip_requesting_account_id  = true
 
@@ -24,5 +24,5 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   ami           = var.ami
-  instance_type = var.instance-type
+  instance_type = var.instance_type
 }
